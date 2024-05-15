@@ -20,7 +20,7 @@ if(JSON.parse(localStorage.getItem("nodes")).length !==0)
   }
   const onElementClick = (event, element) => console.log("click", element);
 
-const CustomNodeFlow = () => {
+const App = () => {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     
@@ -153,4 +153,4 @@ const CustomNodeFlow = () => {
     );
 };
 
-export default CustomNodeFlow;
+export default App;
