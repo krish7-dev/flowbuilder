@@ -9,11 +9,10 @@ import CustomNode from './Customnode';
 const nodeTypes = {
     custom: CustomNode,
 };
-
 let initialNodes = JSON.parse(localStorage.getItem("nodes"))?JSON.parse(localStorage.getItem("nodes")):[]
 let initialEdges=JSON.parse(localStorage.getItem("edges"))?JSON.parse(localStorage.getItem("edges")):[]
 let id_cnt=0
-if(JSON.parse(localStorage.getItem("nodes")).length !==0)
+if(JSON.parse(localStorage.getItem("nodes"))!==null)
   {
     JSON.parse(localStorage.getItem("nodes")).map((e)=>{if(e['id']>id_cnt){id_cnt=e.id}})
     id_cnt=1+parseInt(id_cnt)
