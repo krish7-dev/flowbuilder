@@ -1,8 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
+
 import { useCallback, useEffect, useState } from 'react';
 import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow';
 import 'reactflow/dist/style.css';
+
+import CustomNodeFlow from './Node';
 
 const initialEdges = JSON.parse(localStorage.getItem("edges"))?JSON.parse(localStorage.getItem("edges")):[]
 let initialNodes=JSON.parse(localStorage.getItem("nodes"))?JSON.parse(localStorage.getItem("nodes")):[]
@@ -106,13 +108,8 @@ function App() {
 
       <div className="content_parent">
         <div className="content" onDragOver={(e)=>handle_drop(e)} onDrop={()=>{add_nodes()}} >
-            <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange} isConnectable={1}
-            onConnect={onConnect} onNodeClick={(e)=>{handle_node_click(e)}}/>
             
+            <CustomNodeFlow/>
 
         </div>
         <div className="nodes_panel" style={{display: nodes_flag}}>
