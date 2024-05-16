@@ -6,8 +6,8 @@ const CustomNode = ({ id,data }) => {
     return (
         
         <div idc={id} style={{ background: 'white',display:'flex',justifyContent:'center',width:50, padding: 10, border: '1px solid black' }}>
-            <CustomHandle type="target" position={Position.Right}/>
-            <CustomHandle type="source" position={Position.Left} isConnectable={1} />
+            <CustomHandle type="target" position={Position.Left}/>
+            <CustomHandle type="source" position={Position.Right} isConnectable={1} />
             {data.label}
         </div>    );
 };
