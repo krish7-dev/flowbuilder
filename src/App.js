@@ -75,9 +75,13 @@ const App = () => {
         console.log(edges)
         let li=nodes.map((e)=>{return e['id']})
         let lt=edges.map((e)=>{return e['target']})
-        let intersection = li.filter(x => !lt.includes(x));
+        let uniq_lt = [...new Set(lt)];
+        let intersection = li.filter(x => !uniq_lt.includes(x));
+        console.log(li)
+        console.log(uniq_lt)
+        console.log(intersection)
         if(intersection.length> 1){
-          set_message("!!! More than one node having Empty Target handles !!!")
+          set_message("!More than one node having Empty Target handles!")
           setTimeout(()=>{set_message("This is desktop version. Mob version will be rolled out soon")},2000)
         }
   
@@ -114,7 +118,7 @@ const App = () => {
     return (
         <div className="App">
       <div className="nav">
-        <div className='message'>{message}</div>
+        <div className='message'>{message} <span style={{color:'green',fontStyle:'normal'}}>Target Node: <b>Left</b>, Source Node: <b>Right</b> <sub>limited to 1</sub></span></div>
         <div><button className="save" onClick={()=>{save()}}>{save_st}</button>
         <button onClick={erase} className='clear'>Clear Board</button>
         </div>
