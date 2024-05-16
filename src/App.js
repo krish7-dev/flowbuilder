@@ -28,7 +28,7 @@ const App = () => {
     const [setting_flag,set_setting_flag]=useState("none")
     const [nodes_flag,set_nodes_flag]=useState("block")
     const [save_st,set_save_st]=useState("Save Changes")
-    const [message,set_message]=useState("")
+    const [message,set_message]=useState("This is desktop version. Mob version will be rolled out soon")
   
     function add_nodes(){
         console.log(nodes)
@@ -77,8 +77,8 @@ const App = () => {
         let lt=edges.map((e)=>{return e['target']})
         let intersection = li.filter(x => !lt.includes(x));
         if(intersection.length> 1){
-          set_message("More than one node having Empty Target handles !!!")
-          setTimeout(()=>{set_message("")},2000)
+          set_message("!!! More than one node having Empty Target handles !!!")
+          setTimeout(()=>{set_message("This is desktop version. Mob version will be rolled out soon")},2000)
         }
   
         localStorage.setItem("nodes", JSON.stringify(nodes));
