@@ -118,7 +118,7 @@ const App = () => {
     return (
         <div className="App">
       <div className="nav">
-        <div className='message'>{message} <span style={{color:'green',fontStyle:'normal'}}>Target Node: <b>Left</b>, Source Node: <b>Right</b> <sub>limited to 1</sub></span></div>
+        <div className='message'>{message} <span style={{color:'green',fontStyle:'normal'}}>Target: <b>Left</b>, Source: <b>Right</b> <sub>limited to 1</sub></span></div>
         <div><button className="save" onClick={()=>{save()}}>{save_st}</button>
         <button onClick={erase} className='clear'>Clear Board</button>
         </div>
